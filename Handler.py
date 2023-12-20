@@ -11,7 +11,7 @@ with open("Codes.txt", "w") as File:
         URI = "https://api.discord.gx.games/v1/direct-fulfillment"
         Data = {"partnerUserId": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"}
 
-        Resp = Requests.post(URI, json=Data)
+        Resp = Requests.post(URI, json = Data)
         JSON = Resp.json()
 
         Token = JSON.get('token', '').replace("'", "")
@@ -23,4 +23,4 @@ with open("Codes.txt", "w") as File:
 
 
 Time.sleep(1.5)
-Sub.Popen(["notepad.exe", Filed])
+Sub.Popen(["notepad.exe", "Codes.txt"])
