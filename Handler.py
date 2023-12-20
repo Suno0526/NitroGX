@@ -22,4 +22,5 @@ with open("Codes.txt", "w") as File:
         print(f"https://discord.com/billing/partner-promotions/1180231712274387115/{Token}")
 
 
+Time.sleep(1.5)
 Sub.Popen(["notepad.exe", Filed])
