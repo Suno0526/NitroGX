@@ -16,7 +16,12 @@ with open("Codes.txt", "w") as File:
         Data = {"partnerUserId": PartnerID}
 
         Resp = Requests.post(URI, json = Data)
-        JSON = Resp.json()
+        try:
+            JSON = Resp.json()
+
+        except Requests.exceptions.JSONDecodeError:
+            print("ERROR: The server didn't return a valid JSON response. Please try again later.")
+            continue
 
         Token = JSON.get('token', '').replace("'", "")
         File.write(f"https://discord.com/billing/partner-promotions/1180231712274387115/{Token}\n\n")
